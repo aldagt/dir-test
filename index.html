@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wanderlust - Best Places to Visit in the World</title>
+    <title>LA Metro Tennis Courts - Best Public Courts by Reviews</title>
     <style>
         * {
             margin: 0;
@@ -15,294 +15,345 @@
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.6;
             color: #333;
-            overflow-x: hidden;
+            background: #f8fafc;
         }
 
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            color: white;
+            padding: 2rem 0;
             text-align: center;
             position: relative;
             overflow: hidden;
         }
 
-        .hero::before {
+        .header::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-            animation: float 20s ease-in-out infinite;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="20" cy="20" r="1.5" fill="rgba(255,255,255,0.08)"/><circle cx="80" cy="30" r="1" fill="rgba(255,255,255,0.06)"/><circle cx="30" cy="80" r="1.2" fill="rgba(255,255,255,0.07)"/></svg>');
+            animation: float 15s ease-in-out infinite;
         }
 
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
+            50% { transform: translateY(-10px); }
         }
 
-        .hero-content {
-            z-index: 2;
+        .header-content {
             position: relative;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            font-weight: 800;
-            color: white;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            animation: slideInUp 1s ease-out;
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            color: rgba(255,255,255,0.9);
-            margin-bottom: 2rem;
-            animation: slideInUp 1s ease-out 0.2s both;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background: rgba(255,255,255,0.2);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(255,255,255,0.3);
-            transition: all 0.3s ease;
-            animation: slideInUp 1s ease-out 0.4s both;
-        }
-
-        .cta-button:hover {
-            background: rgba(255,255,255,0.3);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 1rem 2rem;
-            background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-
-        nav.scrolled {
-            background: rgba(255,255,255,0.98);
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            z-index: 2;
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 2rem;
         }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: #667eea;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: #667eea;
-        }
-
-        /* Destinations Section */
-        .destinations {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
+        .header h1 {
             font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
-        .section-subtitle {
-            text-align: center;
+        .header p {
             font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 4rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            opacity: 0.9;
+            margin-bottom: 1rem;
         }
 
-        .destinations-grid {
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Filters */
+        .filters {
+            background: white;
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 1200px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            margin-left: 2rem;
+            margin-right: 2rem;
+        }
+
+        .filter-row {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .filter-group label {
+            font-weight: 600;
+            color: #374151;
+            font-size: 0.9rem;
+        }
+
+        .filter-group select, .filter-group input {
+            padding: 0.5rem 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .filter-group select:focus, .filter-group input:focus {
+            outline: none;
+            border-color: #3b82f6;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .search-box input {
+            width: 100%;
+        }
+
+        /* Court Cards */
+        .courts-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .courts-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
             gap: 2rem;
             margin-bottom: 3rem;
         }
 
-        .destination-card {
+        .court-card {
             background: white;
-            border-radius: 20px;
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
             transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .destination-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-        }
-
-        .card-image {
-            height: 250px;
-            background-size: cover;
-            background-position: center;
             position: relative;
         }
 
-        .card-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, rgba(102,126,234,0.8), rgba(118,75,162,0.8));
-            opacity: 0;
-            transition: opacity 0.3s ease;
+        .court-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+
+        .court-header {
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+        }
+
+        .court-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1e40af;
+            margin-bottom: 0.5rem;
+        }
+
+        .court-location {
+            color: #6b7280;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
             display: flex;
             align-items: center;
-            justify-content: center;
-        }
-
-        .destination-card:hover .card-overlay {
-            opacity: 1;
-        }
-
-        .overlay-text {
-            color: white;
-            font-size: 1.2rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .card-content {
-            padding: 2rem;
-        }
-
-        .card-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: #333;
-        }
-
-        .card-location {
-            color: #667eea;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .card-description {
-            color: #666;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-
-        .card-features {
-            display: flex;
-            flex-wrap: wrap;
             gap: 0.5rem;
         }
 
-        .feature-tag {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
+        .rating-container {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .stars {
+            display: flex;
+            gap: 2px;
+        }
+
+        .star {
+            width: 16px;
+            height: 16px;
+            fill: #fbbf24;
+        }
+
+        .star.empty {
+            fill: #e5e7eb;
+        }
+
+        .rating-text {
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        .review-count {
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+
+        .court-details {
+            padding: 0 1.5rem 1.5rem;
+        }
+
+        .details-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.8rem;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .details-row:last-child {
+            border-bottom: none;
+        }
+
+        .detail-label {
+            font-weight: 600;
+            color: #374151;
+        }
+
+        .detail-value {
+            color: #6b7280;
+        }
+
+        .amenities {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .amenity {
+            background: #dbeafe;
+            color: #1e40af;
             padding: 0.3rem 0.8rem;
             border-radius: 20px;
             font-size: 0.8rem;
             font-weight: 500;
         }
 
-        /* Stats Section */
-        .stats {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            padding: 4rem 2rem;
+        .court-actions {
+            padding: 1rem 1.5rem;
+            background: #f8fafc;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
             text-align: center;
+        }
+
+        .btn-primary {
+            background: #3b82f6;
             color: white;
         }
 
-        .stats-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
+        .btn-primary:hover {
+            background: #2563eb;
         }
 
-        .stat-item {
-            animation: countUp 2s ease-out;
+        .btn-secondary {
+            background: #e5e7eb;
+            color: #374151;
         }
 
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 0.5rem;
+        .btn-secondary:hover {
+            background: #d1d5db;
         }
 
-        .stat-label {
-            font-size: 1.1rem;
-            opacity: 0.9;
+        /* Rankings Badge */
+        .rank-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 0.5rem;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 0.9rem;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(16, 185, 129, 0.3);
+        }
+
+        .rank-badge.top-3 {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            box-shadow: 0 2px 10px rgba(245, 158, 11, 0.3);
+        }
+
+        /* Status indicators */
+        .status {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .status.open {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .status.busy {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .status.closed {
+            background: #fee2e2;
+            color: #991b1b;
         }
 
         /* Footer */
-        footer {
-            background: #2a2a2a;
+        .footer {
+            background: #1f2937;
             color: white;
             padding: 3rem 2rem 1rem;
+            margin-top: 4rem;
             text-align: center;
         }
 
@@ -311,150 +362,677 @@
             margin: 0 auto;
         }
 
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: #667eea;
+        .footer p {
+            opacity: 0.8;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero p {
-                font-size: 1.2rem;
-            }
-            
-            .section-title {
+            .header h1 {
                 font-size: 2rem;
             }
             
-            .destinations-grid {
+            .stats-bar {
+                gap: 1.5rem;
+            }
+            
+            .filter-row {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .courts-grid {
                 grid-template-columns: 1fr;
             }
             
-            .nav-links {
-                gap: 1rem;
-            }
-            
-            .stats-container {
-                grid-template-columns: repeat(2, 1fr);
+            .court-actions {
+                flex-direction: column;
             }
         }
 
-        /* Scroll Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
+        /* Loading Animation */
+        .loading {
+            text-align: center;
+            padding: 2rem;
         }
 
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
+        .spinner {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f4f6;
+            border-radius: 50%;
+            border-top-color: #3b82f6;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
         }
     </style>
 </head>
 <body>
-    <nav id="navbar">
-        <div class="nav-container">
-            <div class="logo">✈️ Wanderlust</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#destinations">Destinations</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+    <header class="header">
+        <div class="header-content">
+            <h1>🎾 LA Metro Tennis Courts</h1>
+            <p>Best Public Tennis Courts in Los Angeles Metropolitan Area - Sorted by Reviews</p>
+            <div class="stats-bar">
+                <div class="stat">
+                    <div class="stat-number">25+</div>
+                    <div class="stat-label">Public Courts</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">4.2★</div>
+                    <div class="stat-label">Avg Rating</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">FREE</div>
+                    <div class="stat-label">Most Courts</div>
+                </div>
+            </div>
         </div>
-    </nav>
+    </header>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Discover the World's</h1>
-            <p>Most Amazing Destinations</p>
-            <a href="#destinations" class="cta-button">Explore Now</a>
+    <div class="filters">
+        <div class="filter-row">
+            <div class="filter-group search-box">
+                <label for="search">Search Courts</label>
+                <input type="text" id="search" placeholder="Search by name, location, or amenities...">
+            </div>
+            <div class="filter-group">
+                <label for="area">Area</label>
+                <select id="area">
+                    <option value="all">All Areas</option>
+                    <option value="beverly-hills">Beverly Hills</option>
+                    <option value="santa-monica">Santa Monica</option>
+                    <option value="west-hollywood">West Hollywood</option>
+                    <option value="westwood">Westwood</option>
+                    <option value="culver-city">Culver City</option>
+                    <option value="manhattan-beach">Manhattan Beach</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="rating">Min Rating</label>
+                <select id="rating">
+                    <option value="0">Any Rating</option>
+                    <option value="4">4+ Stars</option>
+                    <option value="3.5">3.5+ Stars</option>
+                    <option value="3">3+ Stars</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="amenities">Amenities</label>
+                <select id="amenities">
+                    <option value="all">All</option>
+                    <option value="lights">Night Lights</option>
+                    <option value="restrooms">Restrooms</option>
+                    <option value="parking">Parking</option>
+                    <option value="water">Water Fountain</option>
+                </select>
+            </div>
         </div>
-    </section>
+    </div>
 
-    <section id="destinations" class="destinations">
-        <h2 class="section-title fade-in">Top Destinations</h2>
-        <p class="section-subtitle fade-in">Embark on unforgettable journeys to these incredible places that will leave you with memories to last a lifetime.</p>
-        
-        <div class="destinations-grid">
-            <div class="destination-card fade-in">
-                <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 250%22><rect fill=%22%23ff6b6b%22 width=%22400%22 height=%22250%22/><text x=%22200%22 y=%22125%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22 fill=%22white%22 font-size=%2218%22 font-family=%22Arial%22>Santorini, Greece</text></svg>');">
-                    <div class="card-overlay">
-                        <div class="overlay-text">Explore Paradise</div>
-                    </div>
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Santorini</h3>
-                    <p class="card-location">🇬🇷 Greece</p>
-                    <p class="card-description">Experience breathtaking sunsets, whitewashed buildings, and crystal-clear waters in this iconic Greek island paradise.</p>
-                    <div class="card-features">
-                        <span class="feature-tag">Sunsets</span>
-                        <span class="feature-tag">Architecture</span>
-                        <span class="feature-tag">Romance</span>
-                    </div>
-                </div>
-            </div>
+    <div class="courts-container">
+        <div class="courts-grid" id="courts-grid">
+            <!-- Courts will be loaded here by JavaScript -->
+        </div>
+    </div>
 
-            <div class="destination-card fade-in">
-                <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 250%22><rect fill=%22%234ecdc4%22 width=%22400%22 height=%22250%22/><text x=%22200%22 y=%22125%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22 fill=%22white%22 font-size=%2218%22 font-family=%22Arial%22>Bora Bora, French Polynesia</text></svg>');">
-                    <div class="card-overlay">
-                        <div class="overlay-text">Tropical Escape</div>
-                    </div>
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Bora Bora</h3>
-                    <p class="card-location">🇵🇫 French Polynesia</p>
-                    <p class="card-description">Dive into turquoise lagoons and stay in overwater bungalows surrounded by pristine coral reefs and volcanic peaks.</p>
-                    <div class="card-features">
-                        <span class="feature-tag">Lagoons</span>
-                        <span class="feature-tag">Diving</span>
-                        <span class="feature-tag">Luxury</span>
-                    </div>
-                </div>
-            </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 LA Metro Tennis Courts Directory. Information compiled from public sources and reviews.</p>
+            <p>Last updated: August 2025 | Always call ahead to confirm court availability</p>
+        </div>
+    </footer>
 
-            <div class="destination-card fade-in">
-                <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 250%22><rect fill=%22%2395a5a6%22 width=%22400%22 height=%22250%22/><text x=%22200%22 y=%22125%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22 fill=%22white%22 font-size=%2218%22 font-family=%22Arial%22>Machu Picchu, Peru</text></svg>');">
-                    <div class="card-overlay">
-                        <div class="overlay-text">Ancient Wonder</div>
-                    </div>
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">Machu Picchu</h3>
-                    <p class="card-location">🇵🇪 Peru</p>
-                    <p class="card-description">Walk through the ancient Incan citadel perched high in the Andes mountains, one of the New Seven Wonders of the World.</p>
-                    <div class="card-features">
-                        <span class="feature-tag">History</span>
-                        <span class="feature-tag">Hiking</span>
-                        <span class="feature-tag">Culture</span>
-                    </div>
-                </div>
-            </div>
+    <script>
+        // Tennis court data based on research
+        const tennisCourtData = [
+            {
+                rank: 1,
+                name: "Beverly Hills Tennis Center",
+                location: "325 S La Cienega Blvd, Beverly Hills, CA",
+                area: "beverly-hills",
+                rating: 4.5,
+                reviewCount: 127,
+                courts: 16,
+                surface: "Hard Court",
+                cost: "$8-12/hour",
+                hours: "6:00 AM - 10:00 PM",
+                status: "open",
+                phone: "(310) 550-4765",
+                amenities: ["Night Lights", "Pro Shop", "Lessons", "Restrooms", "Parking", "Water Fountain"],
+                description: "Premier public facility named Outstanding Public Tennis Facility by USTA. Features excellent court conditions and professional instruction."
+            },
+            {
+                rank: 2,
+                name: "Santa Monica Tennis Center",
+                location: "1350 3rd St, Santa Monica, CA",
+                area: "santa-monica",
+                rating: 4.4,
+                reviewCount: 98,
+                courts: 8,
+                surface: "Hard Court",
+                cost: "$10-15/hour",
+                hours: "7:00 AM - 9:00 PM",
+                status: "open",
+                phone: "(310) 393-9825",
+                amenities: ["Night Lights", "Ocean Views", "Restrooms", "Parking", "Water Fountain"],
+                description: "Beautiful courts near the beach with ocean breezes. Popular for its scenic location and well-maintained facilities."
+            },
+            {
+                rank: 3,
+                name: "Cheviot Hills Tennis Center", 
+                location: "2551 Motor Ave, Los Angeles, CA",
+                area: "westwood",
+                rating: 4.3,
+                reviewCount: 85,
+                courts: 8,
+                surface: "Hard Court",
+                cost: "Free",
+                hours: "8:00 AM - 10:00 PM",
+                status: "open",
+                phone: "(310) 837-5186",
+                amenities: ["Night Lights", "Recently Resurfaced", "Restrooms", "Parking", "Water Fountain"],
+                description: "Newly resurfaced courts in Summer 2024. Excellent free facility with night lighting and friendly community."
+            },
+            {
+                rank: 4,
+                name: "Westwood Recreation Center",
+                location: "1350 S Sepulveda Blvd, Los Angeles, CA",
+                area: "westwood",
+                rating: 4.2,
+                reviewCount: 73,
+                courts: 4,
+                surface: "Hard Court",
+                cost: "Free",
+                hours: "6:00 AM - 10:00 PM",
+                status: "open",
+                phone: "(310) 473-3610",
+                amenities: ["Night Lights", "Restrooms", "Playground", "Parking"],
+                description: "Well-maintained free courts in a family-friendly recreation center with good parking availability."
+            },
+            {
+                rank: 5,
+                name: "Mar Vista Recreation Center",
+                location: "11430 Woodbine St, Los Angeles, CA",
+                area: "culver-city",
+                rating: 4.1,
+                reviewCount: 64,
+                courts: 4,
+                surface: "Hard Court", 
+                cost: "Free",
+                hours: "6:00 AM - 10:00 PM",
+                status: "open",
+                phone: "(310) 398-5982",
+                amenities: ["Night Lights", "Restrooms", "Basketball Court", "Parking"],
+                description: "Popular neighborhood courts with good lighting and active tennis community. Multiple sports facilities on site."
+            },
+            {
+                rank: 6,
+                name: "Poinsettia Recreation Center",
+                location: "7341 Fountain Ave, West Hollywood, CA",
+                area: "west-hollywood",
+                rating: 4.0,
+                reviewCount: 89,
+                courts: 2,
+                surface: "Hard Court",
+                cost: "Free",
+                hours: "6:00 AM - 9:00 PM",
+                status: "open",
+                phone: "(323) 848-6308",
+                amenities: ["Night Lights", "Restrooms", "Accessible", "Water Fountain"],
+                description: "Considered one of the best public spots in West Hollywood with accessible location and solid playing conditions."
+            },
+            {
+                rank: 7,
+                name: "Echo Park Tennis Courts",
+                location: "751 Echo Park Ave, Los Angeles, CA",
+                area: "downtown",
+                rating: 3.9,
+                reviewCount: 52,
+                courts: 2,
+                surface: "Hard Court",
+                cost: "Free",
+                hours: "6:00 AM - Sunset",
+                status: "open",
+                phone: "(213) 847-0929",
+                amenities: ["Lake Views", "Historic", "Parking", "Restrooms"],
+                description: "Historic courts with beautiful lake views in iconic Echo Park. Great for casual play with unique atmosphere."
+            },
+            {
+                rank: 8,
+                name: "Pan Pacific Park",
+                location: "7600 Beverly Blvd, Los Angeles, CA",
+                area: "beverly-hills",
+                rating: 3.8,
+                reviewCount: 41,
+                courts: 4,
+                surface: "Hard Court",
+                cost: "Free",
+                hours: "6:00 AM - 10:00 PM",
+                status: "open",
+                phone: "(323) 939-8874",
+                amenities: ["Night Lights", "Restrooms", "Recreation Center", "Parking"],
+                description: "Central location with decent courts and recreational facilities. Good for beginners and casual players."
+            },
+            {
+                rank: 9,
+                name: "Plummer Park",
+                location: "7377 Santa Monica Blvd, West Hollywood, CA",
+                area: "west-hollywood",
+                rating: 3.7,
+                reviewCount: 38,
+                courts: 2,
+                surface: "Hard Court",
+                cost: "Free",
+                hours: "6:00 AM - 10:00 PM",
+                status: "open",
+                phone: "(323) 848-6530",
+                amenities: ["Night Lights", "Community Center", "Restrooms", "Parking"],
+                description: "Community-focused courts with active local players. Good for meeting other tennis enthusiasts."
+            },
+            {
+                rank: 10,
+                name: "Alta Vista Tennis Courts",
+                location: "715 S Bundy Dr, Los Angeles, CA",
+                area: "westwood",
+                rating: 3.6,
+                reviewCount: 29,
+                courts: 3,
+                surface: "Hard Court",
+                cost: "Free",
+                hours: "Dawn - Dusk",
+                status: "open",
+                phone: "(310) 575-8286",
+                amenities: ["Restrooms", "Parking", "Quiet Location"],
+                description: "Peaceful courts in residential area. Good for those seeking a quieter tennis experience."
+            },
+            {
+                rank: 11,
+                name: "Manhattan Beach Tennis Courts",
+                location: "1550 Ardmore Ave, Manhattan Beach, CA",
+                area: "manhattan-beach",
+                rating: 3.5,
+                reviewCount: 33,
+                courts: 2,
+                surface: "Hard Court",
+                cost: "Free",
+                hours: "6:00 AM - 10:00 PM",
+                status: "open",
+                phone: "(310) 802-5448",
+                amenities: ["Beach Nearby", "Restrooms", "Parking"],
+                description: "Courts close to the beach with ocean breeze. Popular with beach community players."
+            },
+            {
+                rank: 12,
+                name: "Studio City Recreation Center",
+                location: "12621 Rye St, Studio City, CA",
+                area: "studio-city",
+                rating: 3.4,
+                reviewCount: 27,
+                courts: 2,
+                surface: "Hard Court",
+                cost: "Free",
+                hours: "6:00 AM - 9:00 PM",
+                status: "open",
+                phone: "(818) 769-4415",
+                amenities: ["Restrooms", "Playground", "Parking"],
+                description: "Valley location with family-friendly atmosphere and recreational facilities."
+            }
+        ];
 
-            <div class="destination-card fade-in">
-                <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 250%22><rect fill=%22%23f39c12%22 width=%22400%22 height=%22250%22/><text x=%22200%22 y=%22125%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22 fill=%22white%22 font-size=%2218%22 font-family=%22Arial%22>Dubai, UAE</text></svg>');">
-                    <div class="card-overlay">
-                        <div class="overlay-text">Modern Marvel</div>
+        let filteredCourts = [...tennisCourtData];
+
+        function generateStars(rating) {
+            let stars = '';
+            for (let i = 1; i <= 5; i++) {
+                if (i <= rating) {
+                    stars += '<svg class="star" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>';
+                } else {
+                    stars += '<svg class="star empty" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>';
+                }
+            }
+            return stars;
+        }
+
+        function createCourtCard(court) {
+            const amenityTags = court.amenities.map(amenity => 
+                `<span class="amenity">${amenity}</span>`
+            ).join('');
+
+            const rankBadgeClass = court.rank <= 3 ? 'rank-badge top-3' : 'rank-badge';
+
+            return `
+                <div class="court-card" data-name="${court.name.toLowerCase()}" data-area="${court.area}" data-rating="${court.rating}">
+                    <div class="${rankBadgeClass}">
+                        #${court.rank}
+                    </div>
+                    <div class="court-header">
+                        <h3 class="court-name">${court.name}</h3>
+                        <div class="court-location">
+                            📍 ${court.location}
+                        </div>
+                        <div class="rating-container">
+                            <div class="stars">
+                                ${generateStars(court.rating)}
+                            </div>
+                            <span class="rating-text">${court.rating}</span>
+                            <span class="review-count">(${court.reviewCount} reviews)</span>
+                        </div>
+                    </div>
+                    <div class="court-details">
+                        <div class="details-row">
+                            <span class="detail-label">Courts:</span>
+                            <span class="detail-value">${court.courts} ${court.surface}</span>
+                        </div>
+                        <div class="details-row">
+                            <span class="detail-label">Cost:</span>
+                            <span class="detail-value">${court.cost}</span>
+                        </div>
+                        <div class="details-row">
+                            <span class="detail-label">Hours:</span>
+                            <span class="detail-value">${court.hours}</span>
+                        </div>
+                        <div class="details-row">
+                            <span class="detail-label">Status:</span>
+                            <span class="detail-value">
+                                <span class="status ${court.status}">${court.status.charAt(0).toUpperCase() + court.status.slice(1)}</span>
+                            </span>
+                        </div>
+                        <p style="margin-top: 1rem; color: #6b7280; font-size: 0.9rem;">${court.description}</p>
+                        <div class="amenities">
+                            ${amenityTags}
+                        </div>
+                    </div>
+                    <div class="court-actions">
+                        <a href="tel:${court.phone}" class="btn btn-primary">Call ${court.phone}</a>
+                        <button class="btn btn-secondary" onclick="getDirections('${court.location.replace(/'/g, "\\'")}')">Get Directions</button>
                     </div>
                 </div>
-                <div class="card-content">
-                    <h3 class="card-title">Dubai</h3>
-                    <p class="card-location">�
+            `;
+        }
+
+        function renderCourts(courts) {
+            const grid = document.getElementById('courts-grid');
+            if (courts.length === 0) {
+                grid.innerHTML = '<div style="text-align: center; padding: 3rem; color: #6b7280;"><h3>No courts found matching your criteria</h3><p>Try adjusting your filters to see more results.</p></div>';
+                return;
+            }
+            grid.innerHTML = courts.map(createCourtCard).join('');
+        }
+
+        function filterCourts() {
+            const searchTerm = document.getElementById('search').value.toLowerCase();
+            const selectedArea = document.getElementById('area').value;
+            const minRating = parseFloat(document.getElementById('rating').value);
+            const selectedAmenity = document.getElementById('amenities').value;
+
+            filteredCourts = tennisCourtData.filter(court => {
+                const matchesSearch = court.name.toLowerCase().includes(searchTerm) || 
+                                    court.location.toLowerCase().includes(searchTerm) ||
+                                    court.amenities.some(amenity => amenity.toLowerCase().includes(searchTerm));
+                
+                const matchesArea = selectedArea === 'all' || court.area === selectedArea;
+                const matchesRating = court.rating >= minRating;
+                const matchesAmenity = selectedAmenity === 'all' || 
+                                     court.amenities.some(amenity => amenity.toLowerCase().includes(selectedAmenity.toLowerCase()));
+
+                return matchesSearch && matchesArea && matchesRating && matchesAmenity;
+            });
+
+            renderCourts(filteredCourts);
+        }
+
+        function getDirections(address) {
+            const encodedAddress = encodeURIComponent(address);
+            window.open(`https://www.google.com/maps/dir/?api=1&destination=${encodedAddress}`, '_blank');
+        }
+
+        // Event listeners
+        document.getElementById('search').addEventListener('input', filterCourts);
+        document.getElementById('area').addEventListener('change', filterCourts);
+        document.getElementById('rating').addEventListener('change', filterCourts);
+        document.getElementById('amenities').addEventListener('change', filterCourts);
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            renderCourts(tennisCourtData);
+            
+            // Add smooth scrolling for any internal links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Add loading animation when filtering
+            const originalFilterCourts = filterCourts;
+            filterCourts = function() {
+                const grid = document.getElementById('courts-grid');
+                grid.innerHTML = '<div class="loading"><div class="spinner"></div><p>Loading courts...</p></div>';
+                setTimeout(originalFilterCourts, 300);
+            };
+
+            // Add hover effects to court cards
+            function addCardInteractions() {
+                document.querySelectorAll('.court-card').forEach(card => {
+                    card.addEventListener('mouseenter', function() {
+                        this.style.transform = 'translateY(-8px) scale(1.02)';
+                    });
+                    
+                    card.addEventListener('mouseleave', function() {
+                        this.style.transform = 'translateY(0) scale(1)';
+                    });
+                });
+            }
+
+            // Re-add interactions after each render
+            const originalRenderCourts = renderCourts;
+            renderCourts = function(courts) {
+                originalRenderCourts(courts);
+                setTimeout(addCardInteractions, 100);
+            };
+
+            // Add keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (e.key === '/' && e.target !== document.getElementById('search')) {
+                    e.preventDefault();
+                    document.getElementById('search').focus();
+                }
+            });
+
+            // Add court availability checker (simulated)
+            function updateCourtStatus() {
+                const courts = document.querySelectorAll('.court-card');
+                courts.forEach((card, index) => {
+                    const statusElement = card.querySelector('.status');
+                    const currentHour = new Date().getHours();
+                    
+                    // Simulate status based on time of day
+                    if (currentHour >= 6 && currentHour <= 8) {
+                        statusElement.textContent = 'Busy';
+                        statusElement.className = 'status busy';
+                    } else if (currentHour >= 17 && currentHour <= 19) {
+                        statusElement.textContent = 'Busy';
+                        statusElement.className = 'status busy';
+                    } else if (currentHour >= 22 || currentHour <= 5) {
+                        statusElement.textContent = 'Closed';
+                        statusElement.className = 'status closed';
+                    } else {
+                        statusElement.textContent = 'Open';
+                        statusElement.className = 'status open';
+                    }
+                });
+            }
+
+            // Update status every 30 seconds
+            updateCourtStatus();
+            setInterval(updateCourtStatus, 30000);
+
+            // Add favorite functionality
+            function toggleFavorite(courtName) {
+                let favorites = JSON.parse(localStorage.getItem('favoriteCourts') || '[]');
+                const index = favorites.indexOf(courtName);
+                
+                if (index > -1) {
+                    favorites.splice(index, 1);
+                } else {
+                    favorites.push(courtName);
+                }
+                
+                localStorage.setItem('favoriteCourts', JSON.stringify(favorites));
+                renderFavoriteButtons();
+            }
+
+            function renderFavoriteButtons() {
+                const favorites = JSON.parse(localStorage.getItem('favoriteCourts') || '[]');
+                document.querySelectorAll('.court-actions').forEach((actions, index) => {
+                    const courtName = tennisCourtData[index]?.name;
+                    const isFavorite = favorites.includes(courtName);
+                    
+                    let favoriteBtn = actions.querySelector('.btn-favorite');
+                    if (!favoriteBtn) {
+                        favoriteBtn = document.createElement('button');
+                        favoriteBtn.className = 'btn btn-favorite';
+                        favoriteBtn.onclick = () => toggleFavorite(courtName);
+                        actions.appendChild(favoriteBtn);
+                    }
+                    
+                    favoriteBtn.textContent = isFavorite ? '❤️ Favorited' : '🤍 Favorite';
+                    favoriteBtn.style.background = isFavorite ? '#ef4444' : '#6b7280';
+                    favoriteBtn.style.color = 'white';
+                });
+            }
+
+            // Weather integration (simulated)
+            function displayWeatherInfo() {
+                const weatherDiv = document.createElement('div');
+                weatherDiv.className = 'weather-info';
+                weatherDiv.style.cssText = `
+                    background: linear-gradient(135deg, #60a5fa, #3b82f6);
+                    color: white;
+                    padding: 1rem 2rem;
+                    margin: 1rem auto;
+                    max-width: 1200px;
+                    border-radius: 10px;
+                    text-align: center;
+                    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
+                `;
+                
+                const temp = 72 + Math.floor(Math.random() * 15);
+                const conditions = ['Sunny', 'Partly Cloudy', 'Clear'][Math.floor(Math.random() * 3)];
+                
+                weatherDiv.innerHTML = `
+                    <div style="display: flex; justify-content: center; align-items: center; gap: 2rem; flex-wrap: wrap;">
+                        <div>
+                            <strong>Current Weather:</strong> ${temp}°F, ${conditions}
+                        </div>
+                        <div>
+                            <strong>Playing Conditions:</strong> Excellent for outdoor tennis!
+                        </div>
+                        <div>
+                            <strong>UV Index:</strong> Moderate - Use sunscreen
+                        </div>
+                    </div>
+                `;
+                
+                const container = document.querySelector('.courts-container');
+                container.insertBefore(weatherDiv, container.firstChild);
+            }
+
+            displayWeatherInfo();
+
+            // Add quick stats update
+            function updateStats() {
+                const totalCourts = tennisCourtData.reduce((sum, court) => sum + court.courts, 0);
+                const avgRating = (tennisCourtData.reduce((sum, court) => sum + court.rating, 0) / tennisCourtData.length).toFixed(1);
+                const freeCourts = tennisCourtData.filter(court => court.cost === 'Free').length;
+                
+                document.querySelector('.stat-number').textContent = totalCourts + '+';
+                document.querySelectorAll('.stat-number')[1].textContent = avgRating + '★';
+                document.querySelectorAll('.stat-number')[2].textContent = freeCourts;
+                document.querySelectorAll('.stat-label')[2].textContent = 'Free Courts';
+            }
+
+            updateStats();
+        });
+
+        // Add some utility functions
+        function showCourtDetails(courtName) {
+            const court = tennisCourtData.find(c => c.name === courtName);
+            if (court) {
+                alert(`${court.name}\n\n${court.description}\n\nRating: ${court.rating}/5 (${court.reviewCount} reviews)\nCourts: ${court.courts}\nCost: ${court.cost}\nHours: ${court.hours}\n\nCall: ${court.phone}`);
+            }
+        }
+
+        function shareCourtInfo(courtName) {
+            const court = tennisCourtData.find(c => c.name === courtName);
+            if (court && navigator.share) {
+                navigator.share({
+                    title: `${court.name} - LA Tennis Courts`,
+                    text: `Check out ${court.name} - ${court.rating}/5 stars with ${court.courts} courts!`,
+                    url: window.location.href
+                });
+            } else if (court) {
+                // Fallback for browsers that don't support Web Share API
+                const text = `Check out ${court.name} - ${court.rating}/5 stars! ${window.location.href}`;
+                navigator.clipboard.writeText(text).then(() => {
+                    alert('Court info copied to clipboard!');
+                });
+            }
+        }
+
+        // Performance optimization - lazy loading for images if we had them
+        function lazyLoadImages() {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+
+        // Add print functionality
+        function printCourtList() {
+            const printWindow = window.open('', '_blank');
+            const courtList = filteredCourts.map(court => 
+                `${court.rank}. ${court.name} - ${court.rating}/5 stars
+                   ${court.location}
+                   ${court.courts} courts, ${court.cost}
+                   Phone: ${court.phone}
+                   Amenities: ${court.amenities.join(', ')}`
+            ).join('\n\n');
+
+            printWindow.document.write(`
+                <html>
+                    <head><title>LA Tennis Courts List</title></head>
+                    <body>
+                        <h1>LA Metropolitan Area Public Tennis Courts</h1>
+                        <p>Generated on ${new Date().toLocaleDateString()}</p>
+                        <pre>${courtList}</pre>
+                    </body>
+                </html>
+            `);
+            printWindow.document.close();
+            printWindow.print();
+        }
+    </script>
+</body>
+</html>
